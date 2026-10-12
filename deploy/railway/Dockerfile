@@ -55,5 +55,4 @@ COPY deploy/railway/kafka-server.properties /etc/kafka/server.properties
 RUN chmod +x /app/*.sh
 
 EXPOSE 8081
-VOLUME ["/data"]
 ENTRYPOINT ["/app/entrypoint.sh"]
