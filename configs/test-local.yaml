@@ -1,0 +1,44 @@
+auth:
+  hash:
+    cost: 10
+  token:
+    duration: 86400 # in seconds
+    rs512_key_pair_bit_size: 2048
+database:
+  type: "mysql"
+  host: "127.0.0.1"
+  port: 3306
+  username: "root"
+  password: "secret"
+  database: "idm"
+log:
+  level: "info" # [debug, info, warn, error, panic]
+cache:
+  type: "in_memory"
+  addr: ""
+  username: ""
+  password: ""
+  db: 0
+grpc:
+  address: "127.0.0.1:8080"
+  get_download_task_file:
+    response_buffer_size: 64kb
+http:
+  address: "127.0.0.1:8081"
+  mode: "development" # [development, production]
+mq:
+  addresses: ["127.0.0.1:9092"]
+  client_id: "1"
+cron:
+  execute_all_pending_download_task:
+    schedule: "@every 1m"
+    concurrency_limit: 8
+  update_failed_download_task_status_to_pending:
+    schedule: "@every 10m"
+download:
+  mode: "local"
+  download_directory: "/home/hatch/workspace/idm/downloads/"
+  bucket: "idm"
+  address: ""
+  username: ""
+  password: ""

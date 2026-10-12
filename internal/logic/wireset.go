@@ -1,0 +1,11 @@
+package logic
+
+import "github.com/google/wire"
+
+var WireSet = wire.NewSet(
+	NewAccountLogic,
+	NewHashLogic,
+	NewTokenLogic,
+	NewDownloadTaskLogic,
+	NewHTTPDownloader,
+)
